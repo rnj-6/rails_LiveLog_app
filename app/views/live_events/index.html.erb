@@ -5,6 +5,7 @@
     <%= form_with url: live_events_path, method: :get, local: true do |f| %>
       <%= f.text_field :keyword, value: @keyword, placeholder: "タイトル名またはアーティスト名を入力" %>
       <%= f.submit "検索" %>
+      <%= link_to "クリア", live_events_path %>
     <% end %>
   </div>
 
