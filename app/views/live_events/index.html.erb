@@ -18,7 +18,19 @@
       <td><%= live_event.event_date.strftime("%Y/%m/%d") %></td>
       <td><%= live_event.title %></td>
       <td>📍<%= live_event.venue_name %></td>
-      <td></td>
+      <td>
+        <details>
+          <summary>…</summary>
+          <ul>
+            <li>
+              <%= link_to "イベントを編集", edit_live_event_path(live_event) %>
+            </li>
+            <li>
+              <%= link_to "イベントを削除", live_event_path(live_event), data: { turbo_method: :delete, turbo_confirm: "「#{live_event.title}」 を削除しますか？" } %>
+            </li>
+          </ul>
+        </details>
+      </td>
     </tr>
     <% end %>
   </table>

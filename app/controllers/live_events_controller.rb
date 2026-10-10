@@ -12,11 +12,32 @@ class LiveEventsController < ApplicationController
   def create
     @live_event = current_user.live_events.new(live_event_params)
     if @live_event.save
-      flash[:notice] = "予定を登録しました"
+      flash[:notice] = "イベントを登録しました"
       redirect_to live_events_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @live_event = current_user.live_events.find(params[:id])
+  end
+
+  def update
+    @live_event = current_user.live_events.find(params[:id])
+    if @live_event.update(live_event_params)
+      flash[:notice] = "イベントを編集しました"
+      redirect_to live_events_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @live_event = current_user.live_events.find(params[:id])
+    @live_event.destroy
+    flash[:notice] = "イベントを削除しました"
+    redirect_to live_events_path
   end
 
   private
