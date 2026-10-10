@@ -1,0 +1,31 @@
+<div>
+  <%= form_with model: @live_event do |f| %>
+
+  <div>
+    <%= f.label :event_date, "開催日" %>
+    <%= f.date_field :event_date %>
+  </div>
+
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, placeholder: "タイトルを入力" %>
+  </div>
+
+  <div>
+    <%= f.label :artist_name, "目当てのアーティスト" %>
+    <%= f.text_field :artist_name, placeholder: "目当てのアーティストを入力" %>
+  </div>
+
+  <div>
+    <%# オートコンプリート機能追加 %>
+    <%= f.label :venue_name, "📍" %>
+    <%= f.text_field :venue_name %>
+  </div>
+
+  <div>
+    <%= f.submit "保存" %>
+    <%= link_to "キャンセル", request.referer || root_path %>
+  </div>
+
+  <% end %>
+</div>
