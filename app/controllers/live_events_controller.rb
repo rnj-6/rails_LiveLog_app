@@ -6,7 +6,7 @@ class LiveEventsController < ApplicationController
     @year = params[:year]
     @month = params[:month]
 
-    @live_events = current_user.live_events
+    @live_events = current_user.live_events.order(:event_date)
 
     @years = current_user.live_events.where.not(event_date: nil).map { |event| event.event_date.year }.uniq.sort
 

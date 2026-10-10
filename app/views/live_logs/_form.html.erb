@@ -27,6 +27,14 @@
     </div>
 
     <div>
+      <%= f.label :photo, "写真" %>
+      <div>
+        <%= f.file_field :photo, id: "image-upload", hidden: true %>
+        <label for="image-upload">画像をアップロード</label>
+      </div>
+    </div>
+
+    <div>
       <%= f.submit %>
       <%= link_to "キャンセル", request.referer || root_path %>
     </div>

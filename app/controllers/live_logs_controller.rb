@@ -54,7 +54,8 @@ class LiveLogsController < ApplicationController
   def live_log_params
     params.require(:live_log).permit(
       :people,
-      :content
+      :content,
+      :photo
     )
   end
 end
