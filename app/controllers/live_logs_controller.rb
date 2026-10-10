@@ -40,6 +40,15 @@ class LiveLogsController < ApplicationController
     end
   end
 
+  def destroy
+    @live_event = current_user.live_events.find(params[:live_event_id])
+    @live_log = @live_event.live_log
+
+    @live_log.destroy
+    flash[:notice] = "ライブログを削除しました"
+    redirect_to live_events_path
+  end
+
   private
 
   def live_log_params

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :live_events, except: :show do
-    resource :live_log, only: [:new, :create, :show, :edit, :update]
+    resource :live_log
   end
 
   # イベント一覧のチェックボックスで参戦状況を更新
