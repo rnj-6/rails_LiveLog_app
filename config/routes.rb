@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :live_events, except: :show
 
+  # イベント一覧のチェックボックスで参戦状況を更新
+  patch "live_events/:id/toggle_done", to: "live_events#toggle_done", as: :toggle_done_live_event
+
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

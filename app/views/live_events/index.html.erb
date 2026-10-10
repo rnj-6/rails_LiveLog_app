@@ -14,7 +14,11 @@
 
     <% @live_events.each do |live_event| %>
     <tr>
-      <td></td>
+      <td>
+        <%= form_with url: toggle_done_live_event_path(live_event), method: :patch do |f| %>
+          <%= f.check_box :done, { checked: live_event.done, onchange: "this.form.requestSubmit()" }, "1", "0" %>  <%# チェック状態が変わったら自動送信 %>
+        <% end %>
+      </td>
       <td><%= live_event.event_date.strftime("%Y/%m/%d") %></td>
       <td><%= live_event.title %></td>
       <td>📍<%= live_event.venue_name %></td>

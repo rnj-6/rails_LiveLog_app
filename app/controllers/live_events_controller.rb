@@ -40,6 +40,18 @@ class LiveEventsController < ApplicationController
     redirect_to live_events_path
   end
 
+  def toggle_done  # イベントの参戦状況を更新
+    @live_event = current_user.live_events.find(params[:id])
+
+    if @live_event.update(done: params[:done])
+      flash[:notice] = "参戦状況を更新しました"
+      redirect_to live_events_path
+    else
+      flash[:alert] = "参戦状況を更新できませんでした"
+      redirect_to live_events_path
+    end
+  end
+
   private
   def live_event_params
     params.require(:live_event).permit(
