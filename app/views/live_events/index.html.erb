@@ -9,6 +9,7 @@
       <th>開催日</th>
       <th>タイトル</th>
       <th>会場</th>
+      <th>ライブの記録</th>
       <th></th>
     </tr>
 
@@ -22,6 +23,16 @@
       <td><%= live_event.event_date.strftime("%Y/%m/%d") %></td>
       <td><%= live_event.title %></td>
       <td>📍<%= live_event.venue_name %></td>
+      <td>
+        <% if live_event.live_log.present? %>
+          <%# 記録があれば「記録を見る」 %>
+          <%= link_to "記録を見る", live_event_live_log_path(live_event) %>
+        <% elsif live_event.done %>
+          <%# 記録がなく、参戦済みなら「感想を書く」 %>
+          <%= link_to "感想を書く", new_live_event_live_log_path(live_event) %>
+        <% end %>
+      </td>
+
       <td>
         <details>
           <summary>…</summary>

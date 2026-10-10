@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :live_events, except: :show
+  resources :live_events, except: :show do
+    resource :live_log, only: [:new, :create, :show, :edit, :update]
+  end
 
   # イベント一覧のチェックボックスで参戦状況を更新
   patch "live_events/:id/toggle_done", to: "live_events#toggle_done", as: :toggle_done_live_event

@@ -1,0 +1,35 @@
+<div>
+  <%= form_with model: @live_log, url: live_event_live_log_path(@live_event), method: :post, local: true do |f| %>
+
+    <div>
+      <%= f.label :event_date %>
+      <%= @live_event.event_date.strftime("%Y/%m/%d") %>
+    </div>
+
+    <div>
+      <%= f.label :title, "イベント名" %>
+      <%= @live_event.title %>
+    </div>
+
+    <div>
+      <%= f.label :venue_name, "会場" %>
+      <%= @live_event.venue_name %>
+    </div>
+
+    <div>
+      <%= f.label :content, "感想" %>
+      <%= f.text_area :content %>
+    </div>
+
+    <div>
+      <%= f.label :people %>
+      <%= f.text_field :people %>
+    </div>
+
+    <div>
+      <%= f.submit %>
+      <%= link_to "キャンセル", live_events_path %>
+    </div>
+
+  <% end %>
+</div>
