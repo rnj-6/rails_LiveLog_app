@@ -1,0 +1,25 @@
+<div>
+  <h2>参戦予定リスト</h2>
+
+  <%= link_to "+", new_live_event_path %>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>開催日</th>
+      <th>タイトル</th>
+      <th>会場</th>
+      <th></th>
+    </tr>
+
+    <% @live_events.each do |live_event| %>
+    <tr>
+      <td></td>
+      <td><%= live_event.event_date.strftime("%Y/%m/%d") %></td>
+      <td><%= live_event.title %></td>
+      <td>📍<%= live_event.venue_name %></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
