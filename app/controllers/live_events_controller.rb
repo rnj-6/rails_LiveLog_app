@@ -2,7 +2,14 @@ class LiveEventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @keyword = params[:keyword]
     @live_events = current_user.live_events
+
+    if @keyword.present?
+      @live_events = @live_events.where(
+        "title LIKE :keyword OR artist_name LIKE :keyword", keyword: "%#{@keyword}%"
+      )
+    end
   end
 
   def new

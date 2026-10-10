@@ -1,13 +1,19 @@
 <div>
   <h2>参戦予定リスト</h2>
 
-  <%= link_to "+", new_live_event_path %>
+  <div>
+    <%= form_with url: live_events_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, value: @keyword, placeholder: "タイトル名またはアーティスト名を入力" %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
 
   <table>
     <tr>
       <th></th>
       <th>開催日</th>
       <th>タイトル</th>
+      <th>♪</th>
       <th>会場</th>
       <th>ライブの記録</th>
       <th></th>
@@ -22,6 +28,7 @@
       </td>
       <td><%= live_event.event_date.strftime("%Y/%m/%d") %></td>
       <td><%= live_event.title %></td>
+      <td><%= live_event.artist_name %></td>
       <td>📍<%= live_event.venue_name %></td>
       <td>
         <% if live_event.live_log.present? %>
@@ -49,4 +56,6 @@
     </tr>
     <% end %>
   </table>
+
+  <%= link_to "+", new_live_event_path %>
 </div>
