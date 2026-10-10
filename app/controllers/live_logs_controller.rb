@@ -23,6 +23,23 @@ class LiveLogsController < ApplicationController
     @live_log = @live_event.live_log
   end
 
+  def edit
+    @live_event = current_user.live_events.find(params[:live_event_id])
+    @live_log = @live_event.live_log
+  end
+
+  def update
+    @live_event = current_user.live_events.find(params[:live_event_id])
+    @live_log = @live_event.live_log
+
+    if @live_log.update(live_log_params)
+      flash[:notice] = "ライブログを編集しました"
+      redirect_to live_event_live_log_path(@live_event)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def live_log_params

@@ -1,5 +1,5 @@
 <div>
-  <%= form_with model: @live_log, url: live_event_live_log_path(@live_event), method: :post, local: true do |f| %>
+  <%= form_with model: @live_log, url: live_event_live_log_path(@live_event), local: true do |f| %>
 
     <div>
       <%= f.label :event_date %>
@@ -28,7 +28,7 @@
 
     <div>
       <%= f.submit %>
-      <%= link_to "キャンセル", live_events_path %>
+      <%= link_to "キャンセル", request.referer || root_path %>
     </div>
 
   <% end %>
