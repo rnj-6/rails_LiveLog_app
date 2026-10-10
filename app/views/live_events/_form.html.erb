@@ -16,10 +16,22 @@
     <%= f.text_field :artist_name, placeholder: "目当てのアーティストを入力" %>
   </div>
 
-  <div>
-    <%# オートコンプリート機能追加 %>
+  <div data-controller="place-autocomplete" data-place-autocomplete-api-key-value="<%= Rails.application.credentials.dig(:google_maps, :api_key) %>">
     <%= f.label :venue_name, "📍" %>
-    <%= f.text_field :venue_name %>
+    
+    <%= f.text_field :venue_name,
+      id: "place-input",
+      placeholder: "会場名を検索...",
+      autocomplete: "off",
+      data: {
+        place_autocomplete_target: "input",
+        action: "input->place-autocomplete#search"
+      } %>
+
+    <div data-place-autocomplete-target="results"></div>
+    <%= f.hidden_field :address,
+      id: "place-address",
+      data: { place_autocomplete_target: "address" } %>
   </div>
 
   <div>

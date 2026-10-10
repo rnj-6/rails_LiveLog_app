@@ -26,6 +26,7 @@ class LiveEventsController < ApplicationController
       :artist_name,
       :event_date,
       :venue_name,
+      :address,
       :done
     )
   end
