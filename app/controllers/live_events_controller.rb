@@ -3,12 +3,33 @@ class LiveEventsController < ApplicationController
 
   def index
     @keyword = params[:keyword]
+    @year = params[:year]
+    @month = params[:month]
+
     @live_events = current_user.live_events
 
+    @years = current_user.live_events.where.not(event_date: nil).map { |event| event.event_date.year }.uniq.sort
+
+    # 検索機能
     if @keyword.present?
       @live_events = @live_events.where(
         "title LIKE :keyword OR artist_name LIKE :keyword", keyword: "%#{@keyword}%"
       )
+    end
+
+    # 開催日の絞り込み機能
+    if @year.present? && @month.present?
+
+      # 月単位で指定
+      start_date = Date.new(@year.to_i, @month.to_i, 1)
+      end_date = start_date.end_of_month
+      @live_events = @live_events.where(event_date: start_date..end_date)
+
+    elsif @year.present?
+      # 年単位で指定
+      start_date = Date.new(@year.to_i, 1, 1)
+      end_date = Date.new(@year.to_i, 12, 31)
+      @live_events = @live_events.where(event_date: start_date..end_date)
     end
   end
 

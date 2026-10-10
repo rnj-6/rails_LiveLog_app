@@ -3,7 +3,14 @@
 
   <div>
     <%= form_with url: live_events_path, method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, value: @keyword, placeholder: "タイトル名またはアーティスト名を入力" %>
+        <%= f.text_field :keyword, value: @keyword, placeholder: "タイトル名またはアーティスト名を入力" %>
+      <div>
+        <%# 年単位の絞り込み %>
+        <%= f.select :year, [["すべて", ""]] + @years.map { |year| ["#{year}年", year] }, selected: @year %>
+
+        <%# 月単位の絞り込み %>
+        <%= f.select :month, [["すべて", ""]] + (1..12).map { |month| ["#{month}月", month] }, selected: @month %>
+      </div>
       <%= f.submit "検索" %>
       <%= link_to "クリア", live_events_path %>
     <% end %>
