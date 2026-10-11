@@ -11,9 +11,9 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super do |resource|
-      flash[:notice] = "ログインが完了しました"
-    else
-      flash[:alert] = "ログインに失敗しました"
+      if resource.persisted?
+        flash[:notice] = "ログインが完了しました"
+      end
     end
   end
 

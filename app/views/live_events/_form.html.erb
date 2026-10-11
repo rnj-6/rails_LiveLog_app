@@ -4,11 +4,21 @@
   <div>
     <%= f.label :event_date, "開催日" %>
     <%= f.date_field :event_date %>
+    <p>
+      <% if f.object.errors[:event_date].any? %>
+        開催日<%= f.object.errors[:event_date].first %>
+      <% end %>
+    </p>
   </div>
 
   <div>
     <%= f.label :title, "タイトル" %>
     <%= f.text_field :title, placeholder: "タイトルを入力" %>
+    <p>
+      <% if f.object.errors[:title].any? %>
+        タイトル<%= f.object.errors[:title].first %>
+      <% end %>
+    </p>
   </div>
 
   <div>
@@ -32,6 +42,11 @@
     <%= f.hidden_field :address,
       id: "place-address",
       data: { place_autocomplete_target: "address" } %>
+      <p>
+        <% if f.object.errors[:venue_name].any? %>
+          会場<%= f.object.errors[:venue_name].first %>
+        <% end %>
+      </p>
   </div>
 
   <div>
