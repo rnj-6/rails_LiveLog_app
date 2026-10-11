@@ -16,14 +16,14 @@ class UsersController < ApplicationController
     if password_change_requested?
       if @user.update_with_password(user_params)
         bypass_sign_in(@user)
-        flash[:notice] = "ユーザー情報を更新しました"
+        flash[:notice] = "ユーザー情報を更新しました。"
         redirect_to users_path
       else
         render :edit, status: :unprocessable_entity
       end
 
     elsif @user.update(profile_params)
-      flash[:notice] = "ユーザー情報を更新しました"
+      flash[:notice] = "ユーザー情報を更新しました。"
       redirect_to users_path
     else
       render :edit, status: :unprocessable_entity
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def check_guest
     if current_user.guest?
-      flash[:alert] = "ゲストユーザーはユーザー情報を変更できません"
+      flash[:alert] = "ゲストユーザーはユーザー情報を変更できません。"
       redirect_to users_path
     end
   end

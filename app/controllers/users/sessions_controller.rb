@@ -10,17 +10,16 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    super do |resource|
-      if resource.persisted?
-        flash[:notice] = "ログインが完了しました"
-      end
+    super
+    if user_signed_in?
+      flash[:notice] = "ログインしました。" 
     end
   end
 
   # DELETE /resource/sign_out
   def destroy
     super do |resource|
-      flash[:notice] = "ログアウトしました"
+      flash[:notice] = "ログアウトしました。"
     end
   end
 

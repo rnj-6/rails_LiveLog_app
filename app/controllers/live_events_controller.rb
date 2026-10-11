@@ -40,7 +40,7 @@ class LiveEventsController < ApplicationController
   def create
     @live_event = current_user.live_events.new(live_event_params)
     if @live_event.save
-      flash[:notice] = "イベントを登録しました"
+      flash[:notice] = "イベントを登録しました。"
       redirect_to live_events_path
     else
       render :new, status: :unprocessable_entity
@@ -54,7 +54,7 @@ class LiveEventsController < ApplicationController
   def update
     @live_event = current_user.live_events.find(params[:id])
     if @live_event.update(live_event_params)
-      flash[:notice] = "イベントを編集しました"
+      flash[:notice] = "イベントを編集しました。"
       redirect_to live_events_path
     else
       render :edit, status: :unprocessable_entity
@@ -64,7 +64,7 @@ class LiveEventsController < ApplicationController
   def destroy
     @live_event = current_user.live_events.find(params[:id])
     @live_event.destroy
-    flash[:notice] = "イベントを削除しました"
+    flash[:notice] = "イベントを削除しました。"
     redirect_to live_events_path
   end
 
@@ -72,10 +72,10 @@ class LiveEventsController < ApplicationController
     @live_event = current_user.live_events.find(params[:id])
 
     if @live_event.update(done: params[:done])
-      flash[:notice] = "参戦状況を更新しました"
+      flash[:notice] = "参戦状況を更新しました。"
       redirect_to live_events_path
     else
-      flash[:alert] = "参戦状況を更新できませんでした"
+      flash[:alert] = "参戦状況を更新できませんでした。"
       redirect_to live_events_path
     end
   end

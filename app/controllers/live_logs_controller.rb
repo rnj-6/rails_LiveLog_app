@@ -11,7 +11,7 @@ class LiveLogsController < ApplicationController
     @live_log = @live_event.build_live_log(live_log_params)
     
     if @live_log.save
-      flash[:notice] = "ライブログを作成しました"
+      flash[:notice] = "ライブログを作成しました。"
       redirect_to live_events_path
     else
       render :new, status: :unprocessable_entity
@@ -33,7 +33,7 @@ class LiveLogsController < ApplicationController
     @live_log = @live_event.live_log
 
     if @live_log.update(live_log_params)
-      flash[:notice] = "ライブログを編集しました"
+      flash[:notice] = "ライブログを編集しました。"
       redirect_to live_event_live_log_path(@live_event)
     else
       render :edit, status: :unprocessable_entity
@@ -45,7 +45,7 @@ class LiveLogsController < ApplicationController
     @live_log = @live_event.live_log
 
     @live_log.destroy
-    flash[:notice] = "ライブログを削除しました"
+    flash[:notice] = "ライブログを削除しました。"
     redirect_to live_events_path
   end
 
