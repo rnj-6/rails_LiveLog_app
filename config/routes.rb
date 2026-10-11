@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get "home/index"
 
+  # マイページ
+  get "users", to: "users#show"
+  get "users/edit", to: "users#edit"
+  patch "users", to: "users#update"
+
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }
@@ -9,10 +14,6 @@ Rails.application.routes.draw do
   resources :live_events, except: :show do
     resource :live_log
   end
-
-  get "users", to: "users#show"
-  get "users/edit", to: "users#edit"
-  patch "users", to: "users#update"
 
   # イベント一覧のチェックボックスで参戦状況を更新
   patch "live_events/:id/toggle_done", to: "live_events#toggle_done", as: :toggle_done_live_event
