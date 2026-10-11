@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_guest, only: [:edit, :update]
 
   def show
     @user = current_user
@@ -30,6 +31,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def check_guest
+    if current_user.guest?
+      flash[:alert] = "ゲストユーザーはユーザー情報を変更できません"
+      redirect_to users_path
+    end
+  end
 
   def password_change_requested?
     params[:user][:password].present? ||

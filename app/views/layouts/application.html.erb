@@ -26,6 +26,7 @@
         <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
         <%= link_to "マイページ", users_path %>
       <% else %>
+        <%= button_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
         <%= link_to "アカウント作成", new_user_registration_path %>
         <%= link_to "ログイン", new_user_session_path %>
       <% end %>

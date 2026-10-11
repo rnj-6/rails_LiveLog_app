@@ -1,7 +1,9 @@
 <div>
   <div>
     <%= link_to "戻る", live_events_path %>
-    <%= link_to "編集", users_edit_path %>
+    <% unless current_user.guest? %>
+      <%= link_to "編集", users_edit_path %>
+    <% end %>
   </div>
 
   <div>
