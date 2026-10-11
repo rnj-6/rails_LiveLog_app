@@ -1,0 +1,33 @@
+<div>
+  <div>
+    <%= link_to "戻る", live_events_path %>
+    <%= link_to "編集", users_edit_path %>
+  </div>
+
+  <div>
+    <h2>マイページ</h2>
+
+    <div>
+      <% if @user.profile_image.attached? %>
+        <%= image_tag @user.profile_image.variant(resize_to_fill: [100, 100]) %>
+      <% else %>
+        <%= image_tag "default_icon.png", width: 100, height: 100 %>
+      <% end %>
+    </div>
+
+    <div>
+      <p>ニックネーム</p>
+      <%= @user.name %>
+    <div>
+    
+    <div>
+      <p>メールアドレス</p>
+      <%= @user.email %>
+    </div>
+
+    <div>
+      <p>パスワード</p>
+      <p>*********</p>
+    </div>
+  </div>
+</div>

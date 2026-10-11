@@ -57,5 +57,5 @@ group :test do
 end
 
 gem "devise", "~> 5.0"
-
 gem "json", "~> 2.21"
+gem "image_processing", "~> 1.2"
