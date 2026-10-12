@@ -25,54 +25,66 @@
     <% end %>
   </div>
 
-  <table>
-    <tr>
-      <th></th>
-      <th>開催日</th>
-      <th>タイトル</th>
-      <th>♪</th>
-      <th>会場</th>
-      <th>ライブの記録</th>
-      <th></th>
-    </tr>
-
+  <div class="live-events-table">
     <% @live_events.each do |live_event| %>
-    <tr>
-      <td>
+    <div class="live-event-card">
+      <div>
+        <%# チェック状態が変わったら自動送信 %>
         <%= form_with url: toggle_done_live_event_path(live_event), method: :patch do |f| %>
-          <%= f.check_box :done, { checked: live_event.done, onchange: "this.form.requestSubmit()" }, "1", "0" %>  <%# チェック状態が変わったら自動送信 %>
+          <%= f.check_box :done, { checked: live_event.done, onchange: "this.form.requestSubmit()", class: "table-checkbox" }, "1", "0" %> 
         <% end %>
-      </td>
-      <td><%= live_event.event_date.strftime("%Y/%m/%d") %></td>
-      <td><%= live_event.title %></td>
-      <td><%= live_event.artist_name %></td>
-      <td>📍<%= live_event.venue_name %></td>
-      <td>
+      </div>
+
+      <p class="table-date">
+        <%= live_event.event_date.strftime("%Y/%m/%d") %>
+      </p>
+
+      <div class="table-title-wrapper">
+        <p class="table-title"><%= live_event.title %></p>
+        <div class="table-artist-wrapper">
+          <%= icon "mic-vocal", class: "mic-icon" %>
+          <p class="table-artist"><%= live_event.artist_name %></p>
+        </div>
+      </div>
+      
+      <div class="table-vanue-wrapper">
+        <div class="table-venue">
+          <%= icon "map-pin", class: "map-icon" %>
+          <p class="table-venue-name"><%= live_event.venue_name %></P>
+        </div>
+        <p class="table-address"><%= live_event.address %></p>
+      </div>
+
+      <div class="table-log-link">
         <% if live_event.live_log.present? %>
           <%# 記録があれば「記録を見る」 %>
-          <%= link_to "記録を見る", live_event_live_log_path(live_event) %>
+          <%= link_to "記録を見る", live_event_live_log_path(live_event), class: "table-log-link-show" %>
         <% elsif live_event.done %>
           <%# 記録がなく、参戦済みなら「感想を書く」 %>
-          <%= link_to "感想を書く", new_live_event_live_log_path(live_event) %>
+          <%= link_to "感想を書く", new_live_event_live_log_path(live_event), class: "table-log-link-new" %>
         <% end %>
-      </td>
+      </div>
 
-      <td>
+      <div class="event-menu">
         <details>
           <summary>…</summary>
           <ul>
             <li>
-              <%= link_to "イベントを編集", edit_live_event_path(live_event) %>
+              <%= icon "square-pen", class: "event-memu-pen" %>
+              <%= link_to "イベントを編集", edit_live_event_path(live_event), class: "event-memu-btn-edit" %>
             </li>
             <li>
-              <%= link_to "イベントを削除", live_event_path(live_event), data: { turbo_method: :delete, turbo_confirm: "「#{live_event.title}」 を削除しますか？" } %>
+              <%= icon "trash", class: "event-memu-trash" %>
+              <%= link_to "イベントを削除", live_event_path(live_event), class: "event-memu-btn-delete", data: { turbo_method: :delete, turbo_confirm: "「#{live_event.title}」 を削除しますか？" } %>
             </li>
           </ul>
         </details>
-      </td>
-    </tr>
+      </div>
+    </div>
     <% end %>
-  </table>
-
-  <%= link_to "+", new_live_event_path %>
+  </div>
+  
+  <%= link_to new_live_event_path do %>
+    <%= icon "plus", class: "event-btn-plus" %>
+  <% end %>
 </div>
