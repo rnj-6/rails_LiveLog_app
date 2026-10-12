@@ -1,0 +1,143 @@
+/* 参戦予定リスト */
+.live-events-page {
+    background-color: #F1F1F4;
+    padding: 20px;
+}
+
+/* タイトルブロック */
+.live-events-heading {
+    margin-bottom: 18px;
+}
+
+.live-events-heading p:first-of-type {
+    color: #8B1E3F;
+    font-size: 12px;
+}
+
+.live-events-heading h2 {
+    color: #17171D;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.live-events-heading p:last-of-type {
+    color: #2A2A2F;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 検索エリア全体 */
+.live-events-search {
+    margin-bottom: 32px;
+    padding: 12px;
+    background-color: #FFFFFF;
+    border: 1px solid #E7E7EB;
+    border-radius: 12px;
+}
+
+/* フォーム全体：左側と右側に分ける */
+.live-events-search form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+/* 左側：キーワード・年・月 */
+.live-events-search form > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* キーワード入力欄と虫眼鏡 */
+.search-keyword-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 44px;
+}
+
+/* 虫眼鏡アイコン */
+.search-keyword-wrapper .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #9999A3;
+    pointer-events: none;
+}
+
+/* キーワード入力欄 */
+.live-events-search .search-keyword {
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 42px;
+    border: 1px solid #D5D5DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #17171D;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* 年・月の絞り込み */
+.live-events-search .search-filter {
+    width: 110px;
+    height: 44px;
+    flex-shrink: 0;
+    padding: 0 10px;
+    border: 1px solid #D5D5DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #2A2A2F;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* 右側：検索ボタン・クリアリンク */
+.live-events-search form > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+/* 検索ボタン */
+.live-events-btn-search {
+    height: 44px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8B1E3F;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.live-events-btn-search:hover {
+    background-color: #6F1732;
+}
+
+/* クリアボタン */
+.live-events-btn-clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6F1732;
+    font-size: 14px;
+    font-weight: 600;
+    height: 44px;
+    border: 1px solid #6F1732;
+    padding: 0 18px;
+    border-radius: 8px;
+}

@@ -1,18 +1,27 @@
-<div>
-  <h2>参戦予定リスト</h2>
+<div class="live-events-page">
+  <div class="live-events-heading">
+    <p>MY SCHEDULE</p>
+    <h2>参戦予定リスト</h2>
+    <p>これから参加する音楽イベントを管理しよう。</p>
+  </div>
 
-  <div>
+  <div class="live-events-search">
     <%= form_with url: live_events_path, method: :get, local: true do |f| %>
-        <%= f.text_field :keyword, value: @keyword, placeholder: "タイトル名またはアーティスト名を入力" %>
       <div>
+        <div class="search-keyword-wrapper">
+          <%= icon "search", class: "search-icon" %>
+          <%= f.text_field :keyword, value: @keyword, placeholder: "タイトル名またはアーティスト名を入力", class: "search-keyword" %>
+        </div>
         <%# 年単位の絞り込み %>
-        <%= f.select :year, [["すべて", ""]] + @years.map { |year| ["#{year}年", year] }, selected: @year %>
-
+        <%= f.select :year, [["すべて", ""]] + @years.map { |year| ["#{year}年", year] }, { selected: @year} , { class: "search-filter" } %>
         <%# 月単位の絞り込み %>
-        <%= f.select :month, [["すべて", ""]] + (1..12).map { |month| ["#{month}月", month] }, selected: @month %>
+        <%= f.select :month, [["すべて", ""]] + (1..12).map { |month| ["#{month}月", month] }, { selected: @month }, { class: "search-filter" } %>
       </div>
-      <%= f.submit "検索" %>
-      <%= link_to "クリア", live_events_path %>
+      
+      <div class="live-events-btn">
+        <%= f.submit "検索", class: "live-events-btn-search" %>
+        <%= link_to "クリア", live_events_path, class: "live-events-btn-clear" %>
+      </div>
     <% end %>
   </div>
 

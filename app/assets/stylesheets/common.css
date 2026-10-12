@@ -2,7 +2,7 @@ a {
     text-decoration: none;
 }
 
-body {
+body, h2, p {
     margin: 0;
 }
 
