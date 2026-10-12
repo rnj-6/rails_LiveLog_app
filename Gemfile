@@ -61,3 +61,5 @@ gem "json", "~> 2.21"
 gem "image_processing", "~> 1.2"
 gem "rails-i18n"
 gem "devise-i18n"
+
+gem "rails_icons", "~> 1.10"

@@ -23,6 +23,12 @@
   </div>
 
   <div>
+    <% if @live_log.photo.attached? %>
+      <%= image_tag @live_log.photo, width: 300 %>
+    <% end %>
+  </div>
+
+  <div>
     <p>目当てのアーティスト</p>
     <%= @live_event.artist_name %>
   </div>
@@ -35,11 +41,5 @@
   <div>
     <p>ライブで会った人</p>
     <%= @live_log.people %>
-  </div>
-
-  <div>
-    <% if @live_log.photo.attached? %>
-      <%= image_tag @live_log.photo, width: 300 %>
-    <% end %>
   </div>
 </div>

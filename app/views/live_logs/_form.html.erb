@@ -2,7 +2,7 @@
   <%= form_with model: @live_log, url: live_event_live_log_path(@live_event), local: true do |f| %>
 
     <div>
-      <%= f.label :event_date %>
+      <%= f.label :event_date, "開催日" %>
       <%= @live_event.event_date.strftime("%Y/%m/%d") %>
     </div>
 
@@ -22,12 +22,12 @@
     </div>
 
     <div>
-      <%= f.label :people %>
+      <%= f.label :people, "ライブで会った人" %>
       <%= f.text_field :people %>
     </div>
 
     <div>
-      <%= f.label :photo, "写真" %>
+      <%= f.label :photo, "思い出の一枚" %>
       <div>
         <%= f.file_field :photo, id: "image-upload", hidden: true %>
         <label for="image-upload">画像をアップロード</label>

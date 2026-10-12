@@ -19,17 +19,31 @@
 
   <body>
 
-    <header>
-      <%= link_to "LiveLog", root_path %>
+    <header class="header">
+      <div class="header-logo">
+        <%= link_to root_path, class: "header-logo-link" do %>
+          <%= image_tag "app_icon.jpg", alt: "LiveLogアイコン", class: "header-logo-icon" %><span>LiveLog</span>
+        <% end %>
+      </div>
 
-      <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
-        <%= link_to "マイページ", users_path %>
-      <% else %>
-        <%= button_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
-        <%= link_to "アカウント作成", new_user_registration_path %>
-        <%= link_to "ログイン", new_user_session_path %>
-      <% end %>
+      <div class="header-nav">
+        <% if user_signed_in? %>
+          <%= link_to users_path, class: "header-btn header-btn-mypage" do %>
+            <%= icon "user", class: "header-btn-icon" %>
+            <span>マイページ</span>
+          <% end %>
+
+          <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "header-btn header-btn-signout" do %>
+            <%= icon "log-out", class: "header-btn-icon" %>
+            <span>ログアウト</span>
+          <% end %>
+
+        <% else %>
+          <%= button_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "header-btn header-btn-guest" %>
+          <%= link_to "アカウント作成", new_user_registration_path, class: "header-btn header-btn-signup" %>
+          <%= link_to "ログイン", new_user_session_path, class: "header-btn header-btn-signin" %>
+        <% end %>
+      </div>
         
     </header>
 
