@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |resource|
-      if resource.present?
+      if resource.persisted?
         flash[:notice] = "アカウントを作成しました"
       else
         flash[:alert] = "アカウント作成に失敗しました"

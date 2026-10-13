@@ -101,3 +101,35 @@ body, h2, p、label {
 .header-btn-signout {
     color: #F1F1F4;
 }
+
+/* フラッシュメッセージ全体 */
+.flash-message {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.flash-notice,
+.flash-alert {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+}
+
+/* 成功メッセージ */
+.flash-notice {
+    background-color: #F7E9EE;
+    color: #8B1E3F;
+    border: 1px solid #E8C6D2;
+}
+
+/* 失敗メッセージ */
+.flash-alert {
+    background-color: #F1F1F4;
+    color: #17171D;
+    border: 1px solid #D5D5DC;
+}

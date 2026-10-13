@@ -49,13 +49,16 @@
 
     <%= yield %>
 
-    <div>
+    <div class="flash-message">
       <% if flash[:notice] %>
-        <%= flash[:notice] %>
+        <div class="flash-notice">
+          <%= flash[:notice] %>
+        </div>
       <% end %>
-
       <% if flash[:alert] %>
-        <%= flash[:alert] %>
+        <div class="flash-alert">
+          <%= flash[:alert] %>
+        </div>
       <% end %>
     </div>
   </body>
