@@ -1,45 +1,76 @@
-<div>
-  <%= link_to "戻る", live_events_path %>
+<div class="live-log-show-page">
 
-  <div>
-    <%= link_to "編集", edit_live_event_live_log_path(@live_event) %>
-    <%= link_to "削除", live_event_live_log_path(@live_event), data: { turbo_method: :delete, turbo_confirm: "このログを削除しますか？削除すると元に戻せません。" } %>
+  <div class="live-log-btn-menu">
+    <div class="live-log-back-wrapper">
+      <%= link_to live_events_path do %>
+        <%= icon "undo-2", class: "back-icon" %>
+        <span>一覧へ戻る</span>
+      <% end %>
+    </div>
+
+    <div class="live-log-actions">
+      <div class="live-log-edit-wrapper">
+        <%= link_to edit_live_event_live_log_path(@live_event) do %>
+          <%= icon "square-pen", class: "live-log-edit-icon" %><span>編集</span>
+        <% end %>
+      </div>
+
+      <div class="live-log-delete-wrapper">
+        <%= link_to live_event_live_log_path(@live_event), data: { turbo_method: :delete, turbo_confirm: "このログを削除しますか？削除すると元に戻せません。" } do %>
+          <%= icon "trash", class: "live-log-delete-icon" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <p>開催日</p>
-    <%= @live_event.event_date.strftime("%Y/%m/%d") %>
+  <div class="page-heading">
+    <p>LIVE LOG</p>
+    <h2>ライブの思い出</h2>
+    <p>あの日の感動を、写真と一緒に振り返ろう。</p>
   </div>
 
-  <div>
-    <p>イベント名</p>
-    <%= @live_event.title %>
-  </div>
+  <div class="live-log-show-card">
 
-  <div>
-    <p>会場</p>
-    <%= @live_event.venue_name %>
-    <%= @live_event.address %>
-  </div>
+    <%# 左側 %>
+    <div class="live-log-show-info">
+      <div class="live-log-show-date">
+        <%= icon "calendar-days", class: "date-icon" %>
+        <span><%= @live_event.event_date.strftime("%Y/%m/%d") %><span>
+      </div>
 
-  <div>
-    <% if @live_log.photo.attached? %>
-      <%= image_tag @live_log.photo, width: 300 %>
-    <% end %>
-  </div>
+      <span class="live-log-show-title"><%= @live_event.title %></span>
 
-  <div>
-    <p>目当てのアーティスト</p>
-    <%= @live_event.artist_name %>
-  </div>
+      <div class="live-log-show-artist">
+        <%= icon "mic-vocal", class: "mic-icon" %>
+        <span><%= @live_event.artist_name %></span>
+      </div>
 
-  <div>
-    <p>感想</p>
-    <%= @live_log.content %>
-  </div>
+      <div class="live-log-show-venue">
+        <div class="live-log-show-venue-wrapper">
+          <%= icon "map-pin", class: "map-icon" %>
+          <span><%= @live_event.venue_name %></span>
+        </div>
+        <p><%= @live_event.address %></p>
+      </div>
 
-  <div>
-    <p>ライブで会った人</p>
-    <%= @live_log.people %>
+      <div class="live-log-show-people">
+        <p>ライブで会った友達：</p>
+        <span><%= @live_log.people %></span>
+      </div>
+
+      <div class="live-log-show-content-wrapper">
+        <p>感想</p>
+        <div class="live-log-show-content">
+          <span><%= @live_log.content %></span>
+        </div>
+      </div>
+    </div>
+
+    <%# 右側 %>
+    <div class="live-log-show-photo-wrapper">
+      <% if @live_log.photo.attached? %>
+        <%= image_tag @live_log.photo, class: "live-log-show-photo" %>
+      <% end %>
+    </div>
   </div>
 </div>

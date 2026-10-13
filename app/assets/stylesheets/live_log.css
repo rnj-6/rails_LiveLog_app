@@ -1,0 +1,212 @@
+/* ページ全体 */
+.live-log-show-page {
+    background-color: #F1F1F4;
+    min-height: 100vh;
+    padding: 18px 50px 50px;
+    box-sizing: border-box;
+}
+
+/* 画面上部のボタン全体 */
+.live-log-btn-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.live-log-back-wrapper,
+.live-log-edit-wrapper,
+.live-log-delete-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* backアイコン */
+.live-log-back-wrapper .back-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    color: #2A2A2F;
+}
+
+/* 一覧へ戻る */
+.live-log-back-wrapper span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2A2A2F;
+}
+
+/* 編集と削除のリンク */
+.live-log-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* 編集アイコン */
+.live-log-edit-wrapper .live-log-edit-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    color: #2A2A2F;
+}
+
+/* 編集 */
+.live-log-edit-wrapper span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2A2A2F;
+    margin-left: 4px;
+}
+
+/* 削除アイコン */
+.live-log-delete-wrapper .live-log-delete-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    color: #8B1E3F;
+}
+
+/* ログカード */
+.live-log-show-card {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    min-height: fit-content;
+    padding: 100px;
+    margin-top: 40px;
+    position: relative;
+    min-height: 400px;
+}
+
+.live-log-show-info {
+    width: 55%;
+}
+
+/* 開催日 */
+.live-log-show-date {
+    display: flex;
+    align-items: center;
+}
+
+/* カレンダーアイコン */
+.live-log-show-date .date-icon {
+    width: 20px;
+    height: 20px;
+    color: #6d6d75;
+}
+
+/* 日付 */
+.live-log-show-date span {
+    font-size: 18px;
+    color: #6d6d75;
+    margin-left: 6px;
+}
+
+/* タイトル */
+.live-log-show-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+/* アーティスト */
+.live-log-show-artist {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* マイク */
+.live-log-show-artist .mic-icon {
+    width: 20px;
+    height: 20px;
+    color: #6d6d75;
+    margin-top: 4px;
+}
+
+/* アーティスト名 */
+.live-log-show-artist span {
+    font-size: 16px;
+    color: #6d6d75;
+}
+
+/* 会場 */
+.live-log-show-venue {
+    margin-top: 20px;
+}
+
+/* マップピンと会場名 */
+.live-log-show-venue-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* マップピン */
+.live-log-show-venue-wrapper .map-icon {
+    width: 20px;
+    height: 20px;
+    color: #8B1E3F;
+}
+
+/* 会場名 */
+.live-log-show-venue-wrapper span {
+    font-size: 18px;
+    color: #2A2A2F;
+    font-weight: 400;
+    margin-left: 6px;
+}
+
+/* 住所 */
+.live-log-show-venue p {
+    margin-left: 24px;
+    font-size: 14px;
+    color: #6d6d75;
+}
+
+/* 友達 */
+.live-log-show-people {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* 友達ラベル */
+.live-log-show-people p {
+    color: #2A2A2F;
+    font-size: 16px;
+}
+
+/* 友達の名前 */
+.live-log-show-people span {
+    color: #2A2A2F;
+    font-weight: 500;
+}
+
+.live-log-show-content-wrapper p {
+    margin-top: 30px;
+    color: #2A2A2F;
+}
+
+/* 感想欄 */
+.live-log-show-content {
+    max-width: 80%;
+    background-color: #ece3e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 8px;
+}
+
+/* 感想 */
+.live-log-show-content span {
+    
+}
+
+.live-log-show-photo {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    width: 35%;
+    aspect-ratio: 4 / 3;
+}

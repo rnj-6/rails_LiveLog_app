@@ -6,24 +6,24 @@
 }
 
 /* タイトルブロック */
-.live-events-heading {
+.page-heading {
     margin-bottom: 18px;
 }
 
-.live-events-heading p:first-of-type {
+.page-heading p:first-of-type {
     color: #8B1E3F;
     font-size: 12px;
     margin-bottom: 5px;
 }
 
-.live-events-heading h2 {
+.page-heading h2 {
     color: #17171D;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
-.live-events-heading p:last-of-type {
+.page-heading p:last-of-type {
     color: #2A2A2F;
     font-size: 14px;
     font-weight: 500;
@@ -195,7 +195,7 @@
     margin-top: 5px;
 }
 
-.mic-icon {
+.table-artist-wrapper .mic-icon {
     width: 12px;
     height: 12px;
     color: #4b4b5c;
@@ -509,7 +509,7 @@
 
 /* カード下部のボタン */
 .event-form-menu {
-    margin-top: 200px;
+    margin-top: 100px;
     display: flex;
     justify-content: flex-end;
     gap: 20px;
