@@ -340,7 +340,7 @@
     min-height: 100vh;
 }
 
-/* タイトルブロック：新規作成画面 */
+/* 見出しブロック：新規作成画面 */
 .live-event-form-heading {
     margin-bottom: 30px;
 }
@@ -508,15 +508,15 @@
 }
 
 /* カード下部のボタン */
-.event-form-menu {
+.form-menu {
     margin-top: 100px;
     display: flex;
     justify-content: flex-end;
     gap: 20px;
 }
 
-.event-form-btn-cancel,
-.event-form-btn-submit {
+.form-btn-cancel,
+.form-btn-submit {
     height: 60px;
     font-size: 18px;
     border-radius: 8px;
@@ -527,20 +527,20 @@
 }
 
 /* キャンセルボタン */
-.event-form-btn-cancel {
+.form-btn-cancel {
     border: 1px solid #8B1E3F;
     color: #8B1E3F;
 }
 
 /* 保存ボタン */
-.event-form-btn-submit {
+.form-btn-submit {
     border: none;
     background-color: #8B1E3F;
     color: #FFFFFF;
     transition: 0.5s;
 }
 
-.event-form-btn-submit:hover {
+.form-btn-submit:hover {
     background-color: #6F1732;
 }
 

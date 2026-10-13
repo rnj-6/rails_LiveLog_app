@@ -33,20 +33,20 @@
 
     <%# 左側 %>
     <div class="live-log-show-info">
-      <div class="live-log-show-date">
+      <div class="live-log-date">
         <%= icon "calendar-days", class: "date-icon" %>
         <span><%= @live_event.event_date.strftime("%Y/%m/%d") %><span>
       </div>
 
-      <span class="live-log-show-title"><%= @live_event.title %></span>
+      <p class="live-logtitle"><%= @live_event.title %></p>
 
       <div class="live-log-show-artist">
         <%= icon "mic-vocal", class: "mic-icon" %>
         <span><%= @live_event.artist_name %></span>
       </div>
 
-      <div class="live-log-show-venue">
-        <div class="live-log-show-venue-wrapper">
+      <div class="live-log-venue">
+        <div class="live-log-venue-wrapper">
           <%= icon "map-pin", class: "map-icon" %>
           <span><%= @live_event.venue_name %></span>
         </div>

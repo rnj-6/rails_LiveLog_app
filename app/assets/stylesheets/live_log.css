@@ -83,34 +83,34 @@
 }
 
 /* 開催日 */
-.live-log-show-date {
+.live-log-date {
     display: flex;
     align-items: center;
 }
 
 /* カレンダーアイコン */
-.live-log-show-date .date-icon {
+.live-log-date .date-icon {
     width: 20px;
     height: 20px;
     color: #6d6d75;
 }
 
 /* 日付 */
-.live-log-show-date span {
+.live-log-date span {
     font-size: 18px;
     color: #6d6d75;
     margin-left: 6px;
 }
 
 /* タイトル */
-.live-log-show-title {
+.live-log-title {
     font-size: 30px;
     font-weight: 600;
     margin-top: 12px;
 }
 
 /* アーティスト */
-.live-log-show-artist {
+.live-log-artist {
     display: flex;
     align-items: center;
     text-align: center;
@@ -132,25 +132,25 @@
 }
 
 /* 会場 */
-.live-log-show-venue {
+.live-log-venue {
     margin-top: 20px;
 }
 
 /* マップピンと会場名 */
-.live-log-show-venue-wrapper {
+.live-log-venue-wrapper {
     display: flex;
     align-items: center;
 }
 
 /* マップピン */
-.live-log-show-venue-wrapper .map-icon {
+.live-log-venue-wrapper .map-icon {
     width: 20px;
     height: 20px;
     color: #8B1E3F;
 }
 
 /* 会場名 */
-.live-log-show-venue-wrapper span {
+.live-log-venue-wrapper span {
     font-size: 18px;
     color: #2A2A2F;
     font-weight: 400;
@@ -158,7 +158,7 @@
 }
 
 /* 住所 */
-.live-log-show-venue p {
+.live-log-venue p {
     margin-left: 24px;
     font-size: 14px;
     color: #6d6d75;
@@ -198,11 +198,6 @@
     margin-top: 8px;
 }
 
-/* 感想 */
-.live-log-show-content span {
-    
-}
-
 .live-log-show-photo {
     position: absolute;
     right: 10%;
@@ -210,3 +205,70 @@
     width: 35%;
     aspect-ratio: 4 / 3;
 }
+
+/* ログ作成・編集画面 */
+.live-log-form-page {
+    background-color: #F1F1F4;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+/* ライブログカード */
+.live-log-form-card {
+    background-color: #fcfcfc;
+    border-radius: 20px;
+    padding: 50px 60px;
+}
+
+/* ログのフォーム */
+.input-field label {
+    display: block;
+    margin-bottom: 10px;
+    color: #6d6d75;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.input-field textarea  {
+    display: block;
+    width: 65%;
+    height: 100px;
+    padding: 0 14px 0 20px;
+    border: 1px solid #D5D5DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #17171D;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.live-log-photo-wrapper {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.live-log-photo-label {
+    color: #6d6d75;
+}
+
+.live-log-photo-btn {
+    display: inline-block;
+    background-color: #ece3e6;
+    border: none;
+    color: #2A2A2F;
+    padding: 10px 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: 0.2s; 
+}
+
+.live-log-photo-btn:hover {
+    background-color: #ecd9e0;
+}
+
+
