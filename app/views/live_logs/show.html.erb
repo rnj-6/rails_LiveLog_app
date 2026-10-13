@@ -38,7 +38,7 @@
         <span><%= @live_event.event_date.strftime("%Y/%m/%d") %><span>
       </div>
 
-      <p class="live-logtitle"><%= @live_event.title %></p>
+      <p class="live-log-title"><%= @live_event.title %></p>
 
       <div class="live-log-show-artist">
         <%= icon "mic-vocal", class: "mic-icon" %>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="live-log-show-content-wrapper">
-        <p>感想</p>
+        <p>感想：</p>
         <div class="live-log-show-content">
           <span><%= @live_log.content %></span>
         </div>

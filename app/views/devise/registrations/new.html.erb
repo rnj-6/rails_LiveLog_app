@@ -1,53 +1,74 @@
-<h2>新規登録</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
-  <div class="field">
-    <p><%= f.label :name, "ニックネーム" %></p>
-    <p><%= f.text_field :name, autocomplete: "name", placeholder: "ニックネームを入力" %></p>
-    <p>
-      <% if f.object.errors[:name].any? %>
-        ニックネーム<%= f.object.errors[:name].first %>
-      <% end %>
-    </p>
+<div class="devise-page">
+  <div class="page-heading">
+    <p>CREATE ACCOUNT</p>
+    <h2>新規登録</h2>
+    <p>アカウントを作成して、ライブの思い出を残そう。</p>
   </div>
 
-  <div class="field">
-    <p><%= f.label :profile_image, "プロフィール画像" %></p>
-    <p><%= f.file_field :profile_image, accept: "image/*" %></p>
-  </div>
+  <div class="devise-card">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <p><%= f.label :email, "メールアドレス" %></p>
-    <p><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %></p>
-    <p>
-      <% if f.object.errors[:email].any? %>
-        メールアドレス<%= f.object.errors[:email].first %>
-      <% end %>
-    </p>
-  </div>
+      <div class="signup-field">
+        <div class="signup-label-wrapper">
+          <%= f.label :name, "ニックネーム" %>
+          <span>*</span>
+        </div>
+        <p><%= f.text_field :name, autocomplete: "name", placeholder: "ニックネームを入力" %></p>
+        <p>
+          <% if f.object.errors[:name].any? %>
+            ニックネーム<%= f.object.errors[:name].first %>
+          <% end %>
+        </p>
+      </div>
 
-  <div class="field">
-    <p><%= f.label :password, "パスワード" %></p>
-    <p><%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力" %></p>
-    <p>
-      <% if f.object.errors[:password].any? %>
-        パスワード<%= f.object.errors[:password].first %>
-      <% end %>
-    </p>
-  </div>
+      <div class="signup-field">
+        <%= f.label :profile_image, "プロフィール画像" %>
+        <%= f.file_field :profile_image, class: "profile-image-input" %>
+      </div>
 
-  <div class="field">
-    <p><%= f.label :password_confirmation, "確認用パスワード" %></p>
-    <p><%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認パスワードを入力" %></p>
-    <p>
-      <% if f.object.errors[:password_confirmation].any? %>
-        確認用パスワード<%= f.object.errors[:password_confirmation].first %>
-      <% end %>
-    </p>
-  </div>
+      <div class="signup-field">
+        <div class="signup-label-wrapper">
+          <%= f.label :email, "メールアドレス" %></p>
+          <span>*</span>
+        </div>
+        <p><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %></p>
+        <p>
+          <% if f.object.errors[:email].any? %>
+            メールアドレス<%= f.object.errors[:email].first %>
+          <% end %>
+        </p>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "アカウントを作成" %>
+      <div class="signup-field">
+        <div class="signup-label-wrapper">
+          <%= f.label :password, "パスワード" %>
+          <span>*</span>
+        </div>
+        <p><%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力" %></p>
+        <p>
+          <% if f.object.errors[:password].any? %>
+            パスワード<%= f.object.errors[:password].first %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="signup-field">
+        <div class="signup-label-wrapper">
+          <%= f.label :password_confirmation, "確認用パスワード" %>
+          <span>*</span>
+        </div>
+        <p><%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認パスワードを入力" %></p>
+        <p>
+          <% if f.object.errors[:password_confirmation].any? %>
+            確認用パスワード<%= f.object.errors[:password_confirmation].first %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="signup-actions">
+        <%= f.submit "アカウントを作成", class: "signup-btn-submit" %>
+        <%= link_to "アカウントをお持ちの方はこちら", new_user_session_path, class: "login-link" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

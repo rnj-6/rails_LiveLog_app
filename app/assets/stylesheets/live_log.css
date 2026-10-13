@@ -102,7 +102,7 @@
     margin-left: 6px;
 }
 
-/* タイトル */
+/* 公演名 */
 .live-log-title {
     font-size: 30px;
     font-weight: 600;
@@ -133,7 +133,7 @@
 
 /* 会場 */
 .live-log-venue {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 /* マップピンと会場名 */
@@ -196,6 +196,7 @@
     border-radius: 8px;
     padding: 20px;
     margin-top: 8px;
+    min-height: 40px;
 }
 
 .live-log-show-photo {
@@ -227,9 +228,10 @@
     color: #6d6d75;
     font-size: 15px;
     font-weight: 500;
-    margin-top: 20px;
 }
 
+
+/* 感想入力欄 */
 .input-field textarea  {
     display: block;
     width: 65%;

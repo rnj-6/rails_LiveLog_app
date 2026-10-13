@@ -1,18 +1,26 @@
-<h2>ログイン</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <p><%= f.label :email, "メールアドレス" %></p>
-    <p><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %></p>
+<div class="devise-page">
+  <div class="page-heading">
+   <p>WELCOME BACK</p>
+    <h2>ログイン</h2>
+    <p>ログインして、ライブの思い出を記録しよう。</p>
   </div>
 
-  <div class="field">
-    <p><%= f.label :password, "パスワード" %></p>
-    <p><%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワードを入力" %></p>
-  </div>
+  <div class="devise-card">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="login-field">
+        <p><%= f.label :email, "メールアドレス" %></p>
+        <p><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %></p>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-    <%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path %>
+      <div class="login-field">
+        <p><%= f.label :password, "パスワード" %></p>
+        <p><%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワードを入力" %></p>
+      </div>
+
+      <div class="login-actions">
+        <%= f.submit "ログイン", class: "login-btn-submit" %>
+        <%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "signup-link" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

@@ -397,7 +397,7 @@
     font-size: 16px;
 }
 
-/* 入力必須* */
+/* 必須マーク */
 .input-label-wrapper span {
     color: #8B1E3F;
     font-weight: 600;
@@ -543,4 +543,3 @@
 .form-btn-submit:hover {
     background-color: #6F1732;
 }
-
