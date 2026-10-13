@@ -288,4 +288,112 @@
     font-weight: 500;
 }
 
+/* マイページ編集カード */
+.mypage-edit-card {
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #FCFCFC;
+    box-sizing: border-box;
+    max-width: 600px;
+}
 
+/* プロフィール画像のブロック */
+.mypage-image-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* アイコン画像 */
+.mypage-current-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 999%;
+}
+
+/* 画像アップロードボタン */
+.mypage-image-upload {
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #DA95A9;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mypage-image-upload:hover {
+    background-color: #BB7B8D;
+}
+
+/* 各入力欄 */
+.mypage-edit-field {
+    margin-bottom: 24px;
+}
+
+.mypage-edit-field label {
+    color: #555564;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.mypage-edit-field input {
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #D5D5DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #17171D;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* キャンセル・保存ボタン */
+.mypage-edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 36px;
+}
+
+.mypage-cancel-btn,
+.mypage-save-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* キャンセルボタン */
+.mypage-cancel-btn {
+    border: 1px solid #D5D5DC;
+    background-color: #FFFFFF;
+    color: #555564;
+}
+
+/* 保存ボタン */
+.mypage-save-btn {
+    border: 1px solid #8B1E3F;
+    background-color: #8B1E3F;
+    color: #FFFFFF;
+}
+
+.mypage-save-btn:hover {
+    background-color: #6F1732;
+}

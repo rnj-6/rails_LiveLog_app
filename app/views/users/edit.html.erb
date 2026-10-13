@@ -1,46 +1,54 @@
-<div>
-  <h2>ユーザー情報を編集する</h2>
+<div class="mypage">
+  <div class="page-heading">
+    <p>MY PAGE</p>
+    <h2>ユーザー情報を編集する</h2>
+    <p>プロフィールやアカウント情報を変更しよう。</p>
+  </div>
 
-  <%= form_with model: @user, url: users_path, method: :patch do |f| %>
-    <div>
-      <% if @user.profile_image.attached? %>
-        <%= image_tag @user.profile_image.variant(resize_to_fill: [100, 100]) %>
-      <% else %>
-        <%= image_tag "default_icon.png", width: 100, height: 100 %>
-      <% end %>
+  <div class="mypage-edit-card">
+    <%= form_with model: @user, url: users_path, method: :patch do |f| %>
+      <div class="mypage-image-field">
+        <div class="mypage-current-image">
+          <% if @user.profile_image.attached? %>
+            <%= image_tag @user.profile_image.variant(resize_to_fill: [100, 100]) %>
+          <% else %>
+            <%= image_tag "default_icon.png", width: 100, height: 100 %>
+          <% end %>
+        </div>
+        
+        <%= f.file_field :profile_image, id: "image-upload", hidden: true %>
+        <label for="image-upload" class="mypage-image-upload">画像アップロード</label>
+      </div>
 
-      <%= f.file_field :profile_image, id: "image-upload", hidden: true %>
-      <label for="image-upload">画像アップロード</label>
-    </div>
+      <div class="mypage-edit-field">
+        <%= f.label :name, "ニックネーム" %>
+        <%= f.text_field :name %>
+      </div>
 
-    <div>
-      <%= f.label :name, "ニックネーム" %>
-      <%= f.text_field :name %>
-    </div>
+      <div class="mypage-edit-field">
+       <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email %>
+      </div>
 
-    <div>
-      <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email %>
-    </div>
+      <div class="mypage-edit-field">
+        <%= f.label :current_password, "現在のパスワード" %>
+        <%= f.password_field :current_password, placeholder: "現在のパスワードを入力" %>
+      </div>
 
-    <div>
-      <%= f.label :current_password, "現在のパスワード" %>
-      <%= f.password_field :current_password, placeholder: "現在のパスワードを入力" %>
-    </div>
+      <div class="mypage-edit-field">
+        <%= f.label :password, "変更後のパスワード" %>
+        <%= f.password_field :password, placeholder: "変更後のパスワードを入力" %>
+     </div>
 
-    <div>
-      <%= f.label :password, "変更後のパスワード" %>
-      <%= f.password_field :password, placeholder: "変更後のパスワードを入力" %>
-    </div>
+      <div class="mypage-edit-field">
+        <%= f.label :password_confirmation, "確認用パスワード" %>
+        <%= f.password_field :password_confirmation, placeholder: "確認用パスワードを入力" %>
+      </div>
 
-    <div>
-      <%= f.label :password_confirmation, "確認用パスワード" %>
-      <%= f.password_field :password_confirmation, placeholder: "確認用パスワードを入力" %>
-    </div>
-
-    <div>
-      <%= link_to "キャンセル", users_path %>
-      <%= f.submit "保存" %>
-    </div>
-  <% end %>
+      <div class="mypage-edit-actions">
+        <%= link_to "キャンセル", users_path, class: "mypage-cancel-btn" %>
+        <%= f.submit "保存する", class: "mypage-save-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>
