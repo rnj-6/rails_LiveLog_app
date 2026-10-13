@@ -1,15 +1,34 @@
-<div>
-  <div>
-    <%= link_to "戻る", live_events_path %>
+<div class="mypage">
+
+  <div class="mypage-actions">
+
+    
+    <%= link_to live_events_path do %>
+      <div class="mypage-back-wrapper">
+        <%= icon "undo-2", class: "back-icon" %>
+        <span>一覧へ戻る<span>
+      </div>
+    <% end %>
+  
     <% unless current_user.guest? %>
-      <%= link_to "編集", users_edit_path %>
+
+      <%= link_to users_edit_path do %>
+        <div class="mypage-edit-wrapper">
+          <%= icon "square-pen", class: "mypage-edit-icon" %>
+          <span>編集</span>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
-  <div>
+  <div class="page-heading">
+    <p>MY PAGE</p>
     <h2>マイページ</h2>
+    <p>アカウント情報を確認しよう。</p>
+  </div>
 
-    <div>
+  <div class="mypage-card">
+    <div class="mypage-profile-image">
       <% if @user.profile_image.attached? %>
         <%= image_tag @user.profile_image.variant(resize_to_fill: [100, 100]) %>
       <% else %>
@@ -17,19 +36,21 @@
       <% end %>
     </div>
 
-    <div>
-      <p>ニックネーム</p>
-      <%= @user.name %>
-    <div>
+    <div class="mypage-info">
+      <div class="mypage-field">
+        <p>ニックネーム</p>
+        <p><%= @user.name %><p>
+      </div>
     
-    <div>
-      <p>メールアドレス</p>
-      <%= @user.email %>
-    </div>
+      <div class="mypage-field">
+        <p>メールアドレス</p>
+        <p><%= @user.email %></p>
+       </div>
 
-    <div>
-      <p>パスワード</p>
-      <p>*********</p>
+      <div class="mypage-field">
+        <p>パスワード</p>
+        <p>*********</p>
+      </div>
     </div>
   </div>
 </div>

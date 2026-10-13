@@ -182,3 +182,110 @@
     font-weight: 500;
 }
 
+/* マイページ全体 */
+.mypage {
+    background-color: #F1F1F4;
+    min-height: 100vh;
+    padding: 18px 50px 50px;
+    box-sizing: border-box;
+}
+
+/* マイページ上部のボタンメニュー */
+.mypage-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.mypage-back-wrapper,
+.mypage-edit-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* backアイコン */
+.mypage-back-wrapper .back-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    color: #2A2A2F;
+}
+
+/* 一覧へ戻る */
+.mypage-back-wrapper span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2A2A2F;
+}
+
+/* 編集アイコン */
+.mypage-edit-wrapper .mypage-edit-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    color: #2A2A2F;
+}
+
+/* 編集 */
+.mypage-edit-wrapper span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2A2A2F;
+    margin-left: 4px;
+}
+
+/* マイページカード */
+.mypage-card {
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #FCFCFC;
+    box-sizing: border-box;
+}
+
+/* プロフィール画像 */
+.mypage-profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.mypage-profile-image img {
+    border-radius: 999px;
+}
+
+/* マイページ情報 */
+.mypage-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mypage-field {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #E7E7EB;
+}
+
+.mypage-field:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* ラベル */
+.mypage-field p:first-child {
+    margin: 0 0 8px;
+    color: #555564;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 登録情報 */
+.mypage-field p:last-child {
+    margin: 0;
+    color: #17171D;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
