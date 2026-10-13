@@ -1,58 +1,72 @@
-<div>
+<div class="live-event-form-card">
   <%= form_with model: @live_event do |f| %>
+    <div class="form-grid">
+      <div class="input-field">
+        <div class="input-label-wrapper">
+          <%= f.label :event_date, "開催日" %><span>*</span>
+        </div>
+        <%= f.date_field :event_date %>
+        <p class="error-msg">
+          <% if f.object.errors[:event_date].any? %>
+            開催日<%= f.object.errors[:event_date].first %>
+          <% end %>
+        </p>
+      </div>
 
-  <div>
-    <%= f.label :event_date, "開催日" %>
-    <%= f.date_field :event_date %>
-    <p>
-      <% if f.object.errors[:event_date].any? %>
-        開催日<%= f.object.errors[:event_date].first %>
-      <% end %>
-    </p>
-  </div>
+      <div class="input-field">
+        <div class="input-label-wrapper">
+          <%= f.label :title, "公演名" %><span>*</span>
+        </div>
+        <%= f.text_field :title, placeholder: "公演名を入力" %>
+        <p class="error-msg">
+          <% if f.object.errors[:title].any? %>
+            タイトル<%= f.object.errors[:title].first %>
+          <% end %>
+        </p>
+      </div>
+      
+      <div class="input-field" data-controller="place-autocomplete" data-place-autocomplete-api-key-value="<%= Rails.application.credentials.dig(:google_maps, :api_key) %>">
+        
+        <div class="input-label-wrapper">
+          <%= f.label :venue_name, "会場" %><span>*</span>
+        </div>
 
-  <div>
-    <%= f.label :title, "タイトル" %>
-    <%= f.text_field :title, placeholder: "タイトルを入力" %>
-    <p>
-      <% if f.object.errors[:title].any? %>
-        タイトル<%= f.object.errors[:title].first %>
-      <% end %>
-    </p>
-  </div>
+        <div class="form-venue-wrapper">
+          <%= icon "map-pin", class: "map-icon" %>
+          <%= f.text_field :venue_name,
+            id: "place-input",
+            placeholder: "会場名を検索...",
+            autocomplete: "off",
+            data: {
+              place_autocomplete_target: "input",
+              action: "input->place-autocomplete#search"
+           }, class: "venue-input-field" %>
+        </div>
 
-  <div>
-    <%= f.label :artist_name, "目当てのアーティスト" %>
-    <%= f.text_field :artist_name, placeholder: "目当てのアーティストを入力" %>
-  </div>
+        <div class="venue-suggestion-wrapper" data-place-autocomplete-target="results"></div>
+          <%= f.hidden_field :address,
+          id: "place-address",
+          data: { place_autocomplete_target: "address" } %>
+        <p class="error-msg">
+          <% if f.object.errors[:venue_name].any? %>
+            会場<%= f.object.errors[:venue_name].first %>
+          <% end %>
+        </p>
+      </div>
 
-  <div data-controller="place-autocomplete" data-place-autocomplete-api-key-value="<%= Rails.application.credentials.dig(:google_maps, :api_key) %>">
-    <%= f.label :venue_name, "📍" %>
-    
-    <%= f.text_field :venue_name,
-      id: "place-input",
-      placeholder: "会場名を検索...",
-      autocomplete: "off",
-      data: {
-        place_autocomplete_target: "input",
-        action: "input->place-autocomplete#search"
-      } %>
+      <div class="input-field">
+        <div class="input-label-wrapper">
+          <%= f.label :artist_name, "アーティスト" %>
+        </div>
+        <%= f.text_field :artist_name, placeholder: "アーティストを入力" %>
+      </div>
 
-    <div data-place-autocomplete-target="results"></div>
-    <%= f.hidden_field :address,
-      id: "place-address",
-      data: { place_autocomplete_target: "address" } %>
-      <p>
-        <% if f.object.errors[:venue_name].any? %>
-          会場<%= f.object.errors[:venue_name].first %>
-        <% end %>
-      </p>
-  </div>
+    </div>
 
-  <div>
-    <%= f.submit "保存" %>
-    <%= link_to "キャンセル", request.referer || root_path %>
-  </div>
+    <div class="event-form-menu">
+      <%= link_to "キャンセル", live_events_path, class: "event-form-btn-cancel" %>
+      <%= f.submit "イベントを登録する", class: "event-form-btn-submit" %>
+    </div>
 
   <% end %>
 </div>

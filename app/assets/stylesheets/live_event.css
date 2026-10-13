@@ -220,7 +220,7 @@
     gap: 5px;
 }
 
-.map-icon {
+.table-venue .map-icon {
     width: 16px;
     height: 16px;
     color: #4b4b5c;
@@ -332,3 +332,215 @@
     padding: 12px;
     z-index: 1000;
 }
+
+/* イベント新規作成画面 */
+.live-event-form-page {
+    background-color: #F1F1F4;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+/* タイトルブロック：新規作成画面 */
+.live-event-form-heading {
+    margin-bottom: 30px;
+}
+
+.live-event-form-heading p:first-of-type {
+    color: #8B1E3F;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.live-event-form-heading h2 {
+    color: #17171D;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.live-event-form-heading p:last-of-type {
+    color: #2A2A2F;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* イベントフォームカード */
+.live-event-form-card {
+    background-color: #fcfcfc;
+    border-radius: 20px;
+    padding: 50px 60px;
+}
+
+/* グリッド */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* 入力欄のブロック */
+.input-field {
+    height: 100px;
+}
+
+/* フォームラベル */
+.input-label-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.input-label-wrapper label {
+    color: #555564;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* 入力必須* */
+.input-label-wrapper span {
+    color: #8B1E3F;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+/* 開催日・公演名・アーティスト　入力欄 */
+.input-field input {
+    display: block;
+    width: 65%;
+    height: 44px;
+    padding: 0 14px 0 20px;
+    border: 1px solid #D5D5DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #17171D;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* エラーメッセージ */
+.error-msg {
+    color: #a83d5d;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+/* 会場入力欄とマップピン */
+.form-venue-wrapper {
+    position: relative;
+}
+
+/* マップピン */
+.form-venue-wrapper .map-icon {
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #8B1E3F;
+    pointer-events: none;
+}
+
+/* 会場入力欄 */
+.form-venue-wrapper .venue-input-field {
+    display: block;
+    width: 65%;
+    height: 44px;
+    padding: 0 14px 0 35px;
+    border: 1px solid #D5D5DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #17171D;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* 検索候補欄全体 */
+.venue-suggestion-wrapper {
+    position: relative;
+    width: 50%;
+    padding: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #E7E7EB;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* 検索欄が空のとき検索候補のデザインを非表示 */
+.venue-suggestion-wrapper:empty {
+    display: none;
+}
+
+/* 1件ごとの検索候補 */
+.venue-suggestion {
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E7E7EB;
+}
+
+.venue-suggestion:last-child {
+    border-bottom: none;
+}
+
+/* 検索候補：会場名 */
+.venue-suggestion-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2A2A2F;
+}
+
+/* 検索候補：住所 */
+.venue-suggestion-address {
+    margin-top: 3px;
+    font-size: 10px;
+    color: #56565e;
+}
+
+/* カード下部のボタン */
+.event-form-menu {
+    margin-top: 200px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.event-form-btn-cancel,
+.event-form-btn-submit {
+    height: 60px;
+    font-size: 18px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+/* キャンセルボタン */
+.event-form-btn-cancel {
+    border: 1px solid #8B1E3F;
+    color: #8B1E3F;
+}
+
+/* 保存ボタン */
+.event-form-btn-submit {
+    border: none;
+    background-color: #8B1E3F;
+    color: #FFFFFF;
+    transition: 0.5s;
+}
+
+.event-form-btn-submit:hover {
+    background-color: #6F1732;
+}
+
