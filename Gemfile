@@ -64,3 +64,5 @@ gem "rails-i18n"
 gem "devise-i18n"
 
 gem "rails_icons", "~> 1.10"
+
+gem "pg", "~> 1.7"
