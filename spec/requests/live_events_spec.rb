@@ -21,6 +21,14 @@ RSpec.describe "LiveEvents", type: :request do
     }
   end
 
+  # ライブログ情報を用意
+  let(:live_log) do
+    {
+      people: "友人",
+      content: "楽しいライブだった！"
+    }
+  end
+
   before do
     sign_in user
   end
@@ -64,11 +72,21 @@ RSpec.describe "LiveEvents", type: :request do
   end
 
   describe "DELETE /live_events/:id" do
+
     it "イベントの予定を削除する" do
       live_event_record = user.live_events.create!(live_event)
       expect {
         delete live_event_path(live_event_record)
       }.to change(LiveEvent, :count).by(-1)
+    end
+
+    it "イベントの予定を削除すると紐づくライブログも削除される" do
+      live_event_record = user.live_events.create!(live_event)
+      live_event_record.create_live_log!(live_log)
+      expect {
+        delete live_event_path(live_event_record)
+      }.to change(LiveEvent, :count).by(-1)
+      .and change(LiveLog, :count).by(-1)
     end
   end
 end
