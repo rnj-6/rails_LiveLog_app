@@ -1,5 +1,42 @@
-<%# アプリ紹介ページ　後から実装 %>
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="home-page">
+  <div class="home-heading">
+    <p>YOUR LIVE, YOUR MEMORIES.</p>
+    <h1>ライブの思い出を、<br><span>ひとつの場所に。</span></h1>
+    <p>参戦予定からライブ後の感想まで。<br>LiveLogで、あなたの音楽の記録を残そう。</p>
+    <%= button_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "home-guest-btn" %>
+  </div>
 
-<%= button_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
+  <div class="home-features">
+
+    <div class="home-feature">
+      <div class="home-feature-icon">
+        <%= icon "calendar-days" %>
+      </div>
+      <div class="home-feature-sections">
+        <h2>参戦予定を管理</h2>
+        <p>開催日や会場など、<br>これから参加するライブを記録。</p>
+      </div>
+    </div>
+
+    <div class="home-feature">
+      <div class="home-feature-icon">
+        <%= icon "square-check-big" %>
+      </div>
+      <div class="home-feature-sections">
+        <h2>参戦済みライブをチェック</h2>
+    <p>参加したライブにチェックをつけて、<br>参戦状況をひと目で管理。</p>
+      </div>
+    </div>
+
+    <div class="home-feature">
+      <div class="home-feature-icon">
+        <%= icon "notebook-pen" %>
+      </div>
+      <div class="home-feature-sections">
+        <h2>感想や思い出を残す</h2>
+        <p>ライブの満足度や感想、<br>写真を記録。</p>
+      </div>
+    </div>
+
+  </div>
+</div>

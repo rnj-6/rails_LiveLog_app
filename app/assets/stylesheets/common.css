@@ -133,3 +133,93 @@ body, h2, p、label {
     color: #17171D;
     border: 1px solid #D5D5DC;
 }
+
+/* ホーム画面全体 */
+.home-page {
+    background-color: #F1F1F4;
+    padding: 80px 0 50px;
+    min-height: 100vh;
+}
+
+/* ホーム画面タイトルブロック */
+.home-heading {
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.home-heading p:first-of-type {
+    color: #8B1E3F;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.home-heading h2 {
+    color: #17171D;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.home-heading p:last-of-type {
+    color: #696972;
+    font-size: 22px;
+    font-weight: 450;
+}
+
+/* ゲストログインボタン */
+.home-guest-btn {
+    border: none;
+    background-color: #8B1E3F;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.2s;
+    margin-top: 40px;
+}
+
+.home-guest-btn:hover {
+    background-color: #691931;
+}
+
+/* 機能紹介カード全体 */
+.home-features {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* 機能紹介カード1枚分 */
+.home-feature {
+    display: flex;
+    gap: 30px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 50px 30px;
+}
+
+/* 機能アイコン背景 */
+.home-feature-icon {
+    background-color: #E8C6D2;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+}
+
+/* 機能アイコン */
+.home-feature-icon svg {
+    width: 35px;
+    height: 35px;
+    color: #c0607d;
+    stroke-width: 2px;
+}
+
+.home-feature-sections p {
+    color: #696972;
+    font-weight: 500;
+}
