@@ -253,16 +253,18 @@
     margin-top: 50px;
 }
 
+/* 思い出の一枚 */
 .live-log-photo-label {
     color: #6d6d75;
 }
 
+/* 画像アップロードボタン */
 .live-log-photo-btn {
     display: inline-block;
-    background-color: #ece3e6;
+    background-color: #8B1E3F;
     border: none;
-    color: #2A2A2F;
-    padding: 10px 8px;
+    color: #FFFFFF;
+    padding: 12px 10px;
     border-radius: 6px;
     margin-top: 8px;
     cursor: pointer;
@@ -270,7 +272,7 @@
 }
 
 .live-log-photo-btn:hover {
-    background-color: #ecd9e0;
+    background-color: #6d1630;
 }
 
 

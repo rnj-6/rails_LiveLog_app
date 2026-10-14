@@ -103,6 +103,7 @@
     font-size: 14px;
     font-family: inherit;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 /* 右側：検索ボタン・クリアリンク */
@@ -124,7 +125,8 @@
     font-size: 14px;
     font-weight: 600;
     font-family: inherit;
-    transition: background-color 0.2s ease;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .live-events-btn-search:hover {
@@ -145,6 +147,10 @@
     border-radius: 8px;
 }
 
+.live-events-btn-clear:hover {
+    background-color: #f1f1f1;
+}
+
 /* イベントカード全体 */
 .live-events-table {
     display: flex;
@@ -157,7 +163,7 @@
 /* イベントカード */
 .live-event-card {
     background-color: #fcfcfc;
-    padding: 16px 24px;
+    padding: 12px 24px;
     display: flex;
     align-items: center;
     border: 1px solid #E7E7EB;
@@ -170,12 +176,13 @@
     width: 20px;
     height: 20px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 /* 開催日 */
 .table-date {
     font-size: 13px;
-    margin-right: 20px;
+    margin-right: 30px;
     color: #16161d;
 }
 
@@ -185,14 +192,14 @@
 
 .table-title {
     font-size: 16px;
-    font-weight: 750;
+    font-weight: 700;
     color: #16161d;
+    margin-bottom: 0;
 }
 
 .table-artist-wrapper {
     display: flex;
     align-items: center;
-    margin-top: 5px;
 }
 
 .table-artist-wrapper .mic-icon {
@@ -210,7 +217,6 @@
 .table-vanue-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 4px;
     width: 30%;
 }
 
@@ -223,17 +229,18 @@
 .table-venue .map-icon {
     width: 16px;
     height: 16px;
-    color: #4b4b5c;
+    color: #8B1E3F;
 }
 
 .table-venue-name {
     font-size: 14px;
     color: #4b4b5c;
     font-weight: 400;
+    margin: 0;
 }
 
 .table-address {
-    font-size: 9px;
+    font-size: 10px;
     padding-left: 19px;
     font-weight: 500;
     color: #4b4b5c;
@@ -248,6 +255,7 @@
     font-size: 12px;
     font-weight: 500;
     transition: 1.5s;
+    cursor: pointer;
 }
 
 .table-log-link-new:hover {
@@ -261,12 +269,19 @@
     font-weight: 500;
     border-radius: 6px;
     border: 1px solid #8B1E3F;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.table-log-link-show:hover {
+    background-color: #f1f1f1;
 }
 
 .event-menu {
     margin-left: auto;
     position: relative;
     cursor: pointer;
+    color: #9999A3;
 }
 
 .event-menu summary {
@@ -517,13 +532,9 @@
 
 .form-btn-cancel,
 .form-btn-submit {
-    height: 60px;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 12px;
     border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 8px;
 }
 
 /* キャンセルボタン */
@@ -532,12 +543,17 @@
     color: #8B1E3F;
 }
 
+.form-btn-cancel:hover {
+    background-color: #f1f1f1;
+}
+
 /* 保存ボタン */
 .form-btn-submit {
     border: none;
     background-color: #8B1E3F;
     color: #FFFFFF;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .form-btn-submit:hover {

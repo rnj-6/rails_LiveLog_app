@@ -40,7 +40,9 @@
       </p>
 
       <div class="table-title-wrapper">
-        <p class="table-title"><%= live_event.title %></p>
+        <p class="table-title">
+          <%= live_event.title %>
+        </p>
         <div class="table-artist-wrapper">
           <%= icon "mic-vocal", class: "mic-icon" %>
           <p class="table-artist"><%= live_event.artist_name %></p>
@@ -67,7 +69,7 @@
 
       <div class="event-menu">
         <details>
-          <summary>…</summary>
+          <summary><%= icon "ellipsis" %></summary>
           <ul>
             <li>
               <%= icon "square-pen", class: "event-memu-pen" %>

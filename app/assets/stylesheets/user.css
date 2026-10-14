@@ -68,7 +68,7 @@
 }
 
 /* 新規登録ボタン */
-.login-link {
+.signup-link {
     color: #8B1E3F;
     font-size: 13px;
     font-weight: 500;
@@ -110,16 +110,17 @@
 .profile-image-input::file-selector-button {
     border: none;
     border-radius: 8px;
-    background-color: #da95a9;
+    background-color: #8B1E3F;
     color: #FFFFFF;
     padding: 10px 18px;
     font-size: 13px;
     cursor: pointer;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .profile-image-input::file-selector-button:hover {
-    background-color: #bb7b8d;
+    background-color: #6F1732;
 }
 
 /* 新規登録フォーム */
@@ -318,7 +319,7 @@
 .mypage-image-upload {
     display: inline-block;
     border-radius: 8px;
-    background-color: #DA95A9;
+    background-color: #8B1E3F;
     color: #FFFFFF;
     padding: 10px 18px;
     font-size: 13px;
@@ -328,7 +329,7 @@
 }
 
 .mypage-image-upload:hover {
-    background-color: #BB7B8D;
+    background-color: #6F1732;
 }
 
 /* 各入力欄 */
@@ -382,9 +383,13 @@
 
 /* キャンセルボタン */
 .mypage-cancel-btn {
-    border: 1px solid #D5D5DC;
+    border: 1px solid #8B1E3F;
     background-color: #FFFFFF;
-    color: #555564;
+    color: #8B1E3F;
+}
+
+.mypage-cancel-btn:hover {
+    background-color: #f1f1f1;
 }
 
 /* 保存ボタン */

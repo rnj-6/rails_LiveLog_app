@@ -14,7 +14,7 @@
           <span>*</span>
         </div>
         <p><%= f.text_field :name, autocomplete: "name", placeholder: "ニックネームを入力" %></p>
-        <p>
+        <p class="error-msg">
           <% if f.object.errors[:name].any? %>
             ニックネーム<%= f.object.errors[:name].first %>
           <% end %>
@@ -32,7 +32,7 @@
           <span>*</span>
         </div>
         <p><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %></p>
-        <p>
+        <p class="error-msg">
           <% if f.object.errors[:email].any? %>
             メールアドレス<%= f.object.errors[:email].first %>
           <% end %>
@@ -45,7 +45,7 @@
           <span>*</span>
         </div>
         <p><%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力" %></p>
-        <p>
+        <p class="error-msg">
           <% if f.object.errors[:password].any? %>
             パスワード<%= f.object.errors[:password].first %>
           <% end %>
@@ -58,7 +58,7 @@
           <span>*</span>
         </div>
         <p><%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認パスワードを入力" %></p>
-        <p>
+        <p class="error-msg">
           <% if f.object.errors[:password_confirmation].any? %>
             確認用パスワード<%= f.object.errors[:password_confirmation].first %>
           <% end %>
