@@ -39,7 +39,6 @@
           <% end %>
 
         <% else %>
-          <%= button_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "header-btn header-btn-guest" %>
           <%= link_to "アカウント作成", new_user_registration_path, class: "header-btn header-btn-signup" %>
           <%= link_to "ログイン", new_user_session_path, class: "header-btn header-btn-signin" %>
         <% end %>
