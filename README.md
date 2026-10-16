@@ -57,5 +57,6 @@ https://live-log-app-6afc18f769ea.herokuapp.com/
 イベントを削除すると、紐付く記録も削除される仕様です。
 
 ## 7. ER図
-<img width="2288" height="1448" alt="image" src="https://github.com/user-attachments/assets/e07262a2-0c87-4a23-a054-b2b876d7ab0f" />
+<img width="2288" height="1448" alt="image" src="https://github.com/user-attachments/assets/85acae89-5e22-458d-9221-c94f6b810873" />
+
 
