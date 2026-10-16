@@ -1,24 +1,62 @@
-# README
+# LiveLog
+## 目次
+1. [概要](#1-概要)
+2. [アプリ画面](#2-アプリ画面)
+3. [アプリのURL](#3-アプリのURL)
+4. [使い方](#4-使い方)
+5. [開発の動機](#5-開発の動機)
+6. [工夫したポイント](#6-工夫したポイント)
+7. [ER図](#7-ER図)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 1. 概要
+音楽イベントの予定を管理し、参戦後は思い出を記録することができるアプリです。
 
-Things you may want to cover:
 
-* Ruby version
+## 2. アプリ画面
+<img width="1887" height="945" alt="image" src="https://github.com/user-attachments/assets/adafdc7d-4a3f-449f-8e08-6fc0b4b20e77" />
 
-* System dependencies
+## 3. アプリのURL
+https://live-log-app-6afc18f769ea.herokuapp.com/
 
-* Configuration
+## 4. 使い方
+### アカウント作成
+アカウントを作成してログインする
 
-* Database creation
 
-* Database initialization
+### イベント登録
+- 音楽イベントの日付・公演名・会場・アーティストを登録
+- イベントの編集・削除機能
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### 参戦状況をチェック
+- 参戦後はリストカードにチェックを入れることで管理
+- チェックを入れると感想を書くリンクが表示される
 
-* Deployment instructions
 
-* ...
+### 感想を書く
+- 一緒にライブへ行った友人や感想、撮影した写真を思い出として残す
+- 保存後は記録として閲覧可能
+-記録の編集・削除機能
+
+
+### 検索・絞り込み
+- 公演名やアーティスト名を入力して、リストの中から特定のイベントを検索
+- 年単位または月単位の絞り込み
+
+## 5. 開発の動機
+私はロックバンドが好きで、ライブに行くことを楽しみにしています。
+
+参戦予定はiPhoneのメモアプリ、感想はXなど情報が別々に管理されており、過去の思い出を振り返りにくいと感じていました。
+
+そこでライブの予定から参戦後の記録までを一元管理し、いつでも気軽に思い出を振り返ることができるツールを作りたいと思い、このアプリを開発しました。
+
+## 6. 工夫したポイント
+### モデルの関連付け
+ライブの予定を管理するLiveEventモデルと、感想を記録するLiveLogモデルを関連付けて、どのイベントの記録なのかが分かりやすい仕組みにしました。
+
+イベントを削除すると、紐付く記録も削除される仕様です。
+
+## 7. ER図
+<img width="2288" height="1448" alt="image" src="https://github.com/user-attachments/assets/85acae89-5e22-458d-9221-c94f6b810873" />
+
+
